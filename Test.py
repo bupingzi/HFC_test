@@ -17,10 +17,10 @@ class Design():
         self.upper_right_y = upper_right_y
         self.p_count = p_count
         self.md5_sum = md5_sum
-        # self.area = area #面积计算未编写
+        # self.area = area #面积计算未编写，由于没理解具体是什么面积，所以只搭了框架
         self.density = self.get_density()
 
-    def get_density(self):  # 计算密度
+    def get_density(self):  # 计算密度。同上面，没有准确的密度计算公式，因此只是简单的/100，方便后面调用输出
         return int(self.p_count)/100
 
 
@@ -45,6 +45,6 @@ for index, _data in enumerate(test_data):
                     upper_right_y=_data[4], p_count=_data[5], md5_sum=_data[6])
     design_list.append(design)
 lib = Library(design_list)  # 调用Library
-res = lib.print_desity()  #调用Library方法
+res = lib.print_desity()  #调用print_desity方法，实现排序
 for _res in res:   # 打印结果
     print(_res.name,' ',_res.density)
